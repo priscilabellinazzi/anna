@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anna Con Te | Cidadania Italiana com Método</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=Great+Vibes&family=Pinyon+Script&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#662a2a", // Vinho Premium
+                        "background-light": "#fdfbf7",
+                        "background-dark": "#1a1614",
+                        accent: "#c5a044", // Dourado mais profundo, menos amarelo
+                    },
+                    fontFamily: {
+                        display: ["Playfair Display", "serif"],
+                        sans: ["Inter", "sans-serif"],
+                        script: ["Pinyon Script", "cursive"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        "xl": "1.25rem",
+                        "2xl": "2rem",
+                        "3xl": "3.5rem",
+                    },
+                    boxShadow: {
+                        'premium': '0 20px 50px -12px rgba(102, 42, 42, 0.15)',
+                        'soft': '0 10px 30px -5px rgba(0, 0, 0, 0.05)',
+                    }
+                },
+            },
+        };
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+        body { font-family: "Inter", sans-serif; @apply bg-background-light text-slate-800; }
+        h1, h2, h3, h4 { font-family: "Playfair Display", serif; }
+        .font-script { font-family: "Pinyon Script", cursive; }
+      }
+      .marble-texture { background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDlOKX9vxPDTQmHK_qsUA9ngBbZWba0SN4tSCjecwReEM4q_I94qu9JkBqFL9MWkbEWR56Ee3AAFVdj6eGMcotL9-Obv_4H9vOnpA8UPZnWhf9pi_hT0c5o7ImtNSoTrxtBiX5phPvtoQmHXTlj2en4QQ-esrAH0c6I6_x52DZILnNtz5Ut5VVTQ1r2zjclm5xNwCVSxwoT2R2T3dq319nB3OL7jhrDh-8X5Ywabhn6BP2TxSBYuCzXkol23tZAid5O426Z3R-jKxQ); }
+      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; display: inline-block; vertical-align: middle; line-height: 1; }
+      .fill-stars .material-symbols-outlined { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+      
+      /* Carousel Styles */
+      .carousel-container { position: relative; overflow: hidden; border-radius: 2rem; }
+      .carousel-track { display: flex; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+      .carousel-slide { min-width: 100%; }
+      .dot.active { @apply bg-accent w-8; }
+
+      /* Animations */
+      .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+      .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+
+<body class="transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-background-light/90 backdrop-blur-md border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center">
+                <img src="assets/LOGO FUNDO TRANSPARENTE.png" alt="Anna Con Te" class="h-12">
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium uppercase tracking-wider">
+                <a class="hover:text-primary transition" href="#metodo">O Método</a>
+                <a class="hover:text-primary transition" href="#modulos">Módulos</a>
+                <a class="hover:text-primary transition" href="#quem-e-anna">Quem é Anna</a>
+                <a class="bg-primary text-white px-6 py-2.5 rounded-full hover:bg-red-900 transition shadow-lg"
+                    href="#investimento">Quero Começar</a>
+            </div>
+            <button class="md:hidden text-primary" id="mobile-menu-btn">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-[90vh] flex items-center overflow-hidden bg-stone-900 border-b border-white/10">
+        <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+            style="background-image: url('anna cidadania 1.svg');">
+            <div class="absolute inset-0 bg-stone-950/60"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full py-24">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-8 text-white">
+                    <span
+                        class="inline-block px-4 py-1.5 rounded-full bg-accent text-primary font-bold text-xs uppercase tracking-widest mb-6">Método
+                        Anna Con Te</span>
+                    <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-8 drop-shadow-2xl">
+                        O método completo para você conduzir o reconhecimento da sua <span
+                            class="text-accent block mt-2 opacity-90">cidadania italiana</span>
+                    </h1>
+                    <p class="text-xl text-stone-100 mb-10 leading-relaxed max-w-2xl drop-shadow-md">
+                        O passo a passo desenvolvido a partir da prática real. Você executa as etapas do processo com
+                        clareza, organização e o apoio técnico da Anna em cada fase.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a class="bg-primary text-white px-10 py-5 rounded-xl text-lg font-semibold hover:bg-red-900 transition flex items-center justify-center gap-2 shadow-2xl"
+                            href="#investimento">
+                            <span class="material-symbols-outlined">rocket_launch</span>
+                            Quero começar meu processo agora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Pain Points -->
+    <section class="py-24 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-in">Você se identifica com alguma dessas situações?</h2>
+            <p class="text-slate-500 mb-16 fade-in">Se a resposta for sim, o método Anna Con Te pode te orientar nesse
+                caminho.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                <!-- Pain Card 1 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-stone-100 hover:shadow-md transition text-left group fade-in">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-stone-100 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors mb-6">
+                        <span class="material-symbols-outlined">explore</span>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed font-medium">Sonha em morar na Itália, mas sente que isso
+                        parece distante demais?</p>
+                </div>
+                <!-- Pain Card 2 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-stone-100 hover:shadow-md transition text-left group fade-in">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-stone-100 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors mb-6">
+                        <span class="material-symbols-outlined">help_outline</span>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed font-medium">Tem ascendência italiana, mas não sabe se
+                        realmente tem direito à cidadania?</p>
+                </div>
+                <!-- Pain Card 3 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-stone-100 hover:shadow-md transition text-left group fade-in">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-stone-100 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors mb-6">
+                        <span class="material-symbols-outlined">inventory_2</span>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed font-medium">Se sente perdido(a) entre documentos, regras e
+                        informações desencontradas?</p>
+                </div>
+                <!-- Pain Card 4 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-stone-100 hover:shadow-md transition text-left group fade-in">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-stone-100 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors mb-6">
+                        <span class="material-symbols-outlined">warning_amber</span>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed font-medium">Já pensou em iniciar o processo, mas travou
+                        por medo de errar?</p>
+                </div>
+                <!-- Pain Card 5 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-stone-100 hover:shadow-md transition text-left group fade-in">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-stone-100 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors mb-6">
+                        <span class="material-symbols-outlined">lock</span>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed font-medium">Sente que esse é um sonho possível, mas não
+                        sabe por onde começar nem em quem confiar?</p>
+                </div>
+                <!-- Pain Card 6 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-stone-100 hover:shadow-md transition text-left group fade-in">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-stone-100 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors mb-6">
+                        <span class="material-symbols-outlined">savings</span>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed font-medium">Percebe que contratar uma consultoria completa
+                        não cabe no seu orçamento?</p>
+                </div>
+            </div>
+            <div class="bg-primary p-12 rounded-3xl text-white text-center relative overflow-hidden fade-in shadow-2xl">
+                <div class="relative z-10">
+                    <p class="text-xl md:text-2xl font-display italic mb-8">Se você respondeu SIM, o método Anna Con Te
+                        pode te orientar nesse caminho.</p>
+                    <a class="bg-accent text-primary px-10 py-4 rounded-xl font-bold hover:scale-105 transition shadow-xl inline-block uppercase tracking-widest text-sm"
+                        href="#investimento">Quero começar meu processo agora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro Anna Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold mb-8 font-display italic text-primary">Você não está só!</h2>
+                <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
+                    <p>Este método nasceu porque eu, Anna, vivi exatamente as mesmas dúvidas, inseguranças e
+                        dificuldades que você pode estar enfrentando agora.</p>
+                    <p>Ao longo dessa jornada, entendi que o maior problema não é a falta de direito, mas a falta de
+                        orientação clara, técnica e honesta sobre cada etapa do processo.</p>
+                    <div
+                        class="bg-stone-50 p-10 rounded-[2.5rem] border border-stone-100 my-12 shadow-sm italic text-slate-800">
+                        "O método Anna Con Te foi criado para oferecer estrutura, conhecimento e direcionamento,
+                        permitindo que você conduza a parte operacional do seu processo com mais clareza, consciência e
+                        segurança."
+                    </div>
+                    <p>Aqui, você aprende a entender o processo, organizar a documentação e tomar decisões com base em
+                        critério técnico e realidade jurídica.</p>
+                    <h3 class="text-2xl font-bold text-primary mt-12 uppercase tracking-[0.2em]">SUA CIDADANIA ITALIANA
+                        COMEÇA AQUI!</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa Section -->
+    <section class="py-24 bg-white relative overflow-hidden text-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 fade-in">
+                    <img src="assets/mapa italia.png" alt="Mapa da Itália"
+                        class="w-full h-auto drop-shadow-xl opacity-80" />
+                </div>
+                <div class="lg:w-1/2 fade-in">
+                    <span class="badge mb-4 uppercase tracking-[0.3em] text-primary font-bold text-xs italic">O
+                        Caminho</span>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 font-display italic">Aprenda a conduzir o seu
+                        reconhecimento de forma profissional.</h2>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-8">
+                        Desde a pesquisa das suas raízes até a conquista do seu passaporte italiano. Você terá a clareza
+                        necessária sobre a legislação e os procedimentos reais.
+                    </p>
+                    <ul class="space-y-4 text-slate-700 font-medium">
+                        <li class="flex items-center gap-4"><span class="w-2 h-2 rounded-full bg-accent"></span> Entenda
+                            a origem do seu direito à cidadania italiana</li>
+                        <li class="flex items-center gap-4"><span class="w-2 h-2 rounded-full bg-accent"></span>
+                            Organize a documentação necessária com autonomia e método</li>
+                        <li class="flex items-center gap-4"><span class="w-2 h-2 rounded-full bg-accent"></span> Aprenda
+                            a analisar e interpretar as regras e exigências técnicas</li>
+                        <li class="flex items-center gap-4"><span class="w-2 h-2 rounded-full bg-accent"></span> Execute
+                            as etapas operacionais com o apoio técnico da Anna</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Timeline of Pillars -->
+    <section class="py-24 bg-stone-50 overflow-hidden" id="metodo">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 italic font-display">Os pilares que vamos trabalhar juntos
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+                <div
+                    class="fade-in group bg-white p-8 rounded-3xl shadow-sm border border-stone-100 hover:shadow-xl transition-all">
+                    <div
+                        class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center text-primary mx-auto mb-6 group-hover:bg-accent transition-colors">
+                        <span class="material-symbols-outlined text-3xl">yard</span>
+                    </div>
+                    <h4 class="font-bold mb-3 uppercase text-xs tracking-[0.2em]">Raízes</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Reconexão com sua história familiar e com a origem
+                        do seu direito à cidadania italiana.</p>
+                </div>
+                <div
+                    class="fade-in group bg-white p-8 rounded-3xl shadow-sm border border-stone-100 hover:shadow-xl transition-all">
+                    <div
+                        class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center text-primary mx-auto mb-6 group-hover:bg-accent transition-colors">
+                        <span class="material-symbols-outlined text-3xl">lightbulb</span>
+                    </div>
+                    <h4 class="font-bold mb-3 uppercase text-xs tracking-[0.2em]">Clareza</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Você entende o processo, as regras e os documentos
+                        certos — sem achismos.</p>
+                </div>
+                <div
+                    class="fade-in group bg-white p-8 rounded-3xl shadow-sm border border-stone-100 hover:shadow-xl transition-all">
+                    <div
+                        class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center text-primary mx-auto mb-6 group-hover:bg-accent transition-colors">
+                        <span class="material-symbols-outlined text-3xl">map</span>
+                    </div>
+                    <h4 class="font-bold mb-3 uppercase text-xs tracking-[0.2em]">Caminho</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Um passo a passo estruturado, do início até a
+                        definição da via correta para o seu caso.</p>
+                </div>
+                <div
+                    class="fade-in group bg-white p-8 rounded-3xl shadow-sm border border-stone-100 hover:shadow-xl transition-all">
+                    <div
+                        class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center text-primary mx-auto mb-6 group-hover:bg-accent transition-colors">
+                        <span class="material-symbols-outlined text-3xl">support_agent</span>
+                    </div>
+                    <h4 class="font-bold mb-3 uppercase text-xs tracking-[0.2em]">Autonomia</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Você executa o processo, mas com orientação
+                        técnica para não caminhar sozinho(a).</p>
+                </div>
+                <div
+                    class="fade-in group bg-white p-8 rounded-3xl shadow-sm border border-stone-100 hover:shadow-xl transition-all">
+                    <div
+                        class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center text-primary mx-auto mb-6 group-hover:bg-accent transition-colors">
+                        <span class="material-symbols-outlined text-3xl">verified_user</span>
+                    </div>
+                    <h4 class="font-bold mb-3 uppercase text-xs tracking-[0.2em]">Segurança</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Decisões baseadas em método, análise e critério
+                        técnico — não em tentativas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Banner -->
+    <section class="py-20 bg-background-light relative border-y border-stone-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 text-center">
+                <!-- Stat 1 -->
+                <div class="fade-in group md:border-r border-stone-200 last:border-0 px-4">
+                    <div class="mb-4 flex justify-center">
+                        <span
+                            class="material-symbols-outlined text-4xl text-accent transition-transform group-hover:scale-110 duration-500">groups</span>
+                    </div>
+                    <p class="text-4xl md:text-5xl font-display font-bold mb-3 text-primary">500+</p>
+                    <p class="text-[10px] uppercase tracking-[0.3em] text-slate-400 font-bold">Famílias Ajudadas</p>
+                </div>
+                <!-- Stat 2 -->
+                <div class="fade-in group md:border-r border-stone-200 last:border-0 px-4">
+                    <div class="mb-4 flex justify-center">
+                        <span
+                            class="material-symbols-outlined text-4xl text-accent transition-transform group-hover:scale-110 duration-500">workspace_premium</span>
+                    </div>
+                    <p class="text-4xl md:text-5xl font-display font-bold mb-3 text-primary">10+</p>
+                    <p class="text-[10px] uppercase tracking-[0.3em] text-slate-400 font-bold">Anos de Experiência</p>
+                </div>
+                <!-- Stat 3 -->
+                <div class="fade-in group md:border-r border-stone-200 last:border-0 px-4">
+                    <div class="mb-4 flex justify-center">
+                        <span
+                            class="material-symbols-outlined text-4xl text-accent transition-transform group-hover:scale-110 duration-500">star</span>
+                    </div>
+                    <p class="text-4xl md:text-5xl font-display font-bold mb-3 text-primary">98%</p>
+                    <p class="text-[10px] uppercase tracking-[0.3em] text-slate-400 font-bold">Satisfação Alunos</p>
+                </div>
+                <!-- Stat 4 -->
+                <div class="fade-in group px-4">
+                    <div class="mb-4 flex justify-center">
+                        <span
+                            class="material-symbols-outlined text-4xl text-accent transition-transform group-hover:scale-110 duration-500">menu_book</span>
+                    </div>
+                    <p class="text-4xl md:text-5xl font-display font-bold mb-3 text-primary">5</p>
+                    <p class="text-[10px] uppercase tracking-[0.3em] text-slate-400 font-bold">Módulos Completos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 bg-primary text-white relative">
+        <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+            <div class="mb-16 fade-in">
+                <span
+                    class="badge mb-4 uppercase tracking-[0.3em] text-accent font-bold text-xs flex items-center justify-center gap-2">
+                    Prova Social
+                </span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 font-display">O que nossos alunos dizem</h2>
+                <p class="text-stone-300">Resultados reais de quem já iniciou a jornada</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left fill-stars">
+                <!-- Testimonial Cards Optimized -->
+                <div
+                    class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 fade-in hover:bg-white/20 transition-all duration-500 shadow-2xl">
+                    <div class="flex gap-1 text-accent mb-4">
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                    </div>
+                    <p class="text-sm italic text-stone-100 mb-6 leading-relaxed">"Eu estava completamente perdida no
+                        início... Hoje finalmente sou cidadã italiana!"</p>
+                    <div class="flex items-center gap-3 border-t border-white/10 pt-4">
+                        <div
+                            class="w-8 h-8 rounded-full bg-accent text-primary flex items-center justify-center font-bold text-[10px]">
+                            AF</div>
+                        <div>
+                            <p class="font-bold text-xs">Alessandra Ferrari</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 fade-in hover:bg-white/20 transition-all duration-500 shadow-2xl">
+                    <div class="flex gap-1 text-accent mb-4">
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                    </div>
+                    <p class="text-sm italic text-stone-100 mb-6 leading-relaxed">"O cuidado com os detalhes e a análise
+                        de certidões mudou tudo no meu processo."</p>
+                    <div class="flex items-center gap-3 border-t border-white/10 pt-4">
+                        <div
+                            class="w-8 h-8 rounded-full bg-accent text-primary flex items-center justify-center font-bold text-[10px]">
+                            MB</div>
+                        <div>
+                            <p class="font-bold text-xs">Marcos Bianchi</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 fade-in hover:bg-white/20 transition-all duration-500 shadow-2xl">
+                    <div class="flex gap-1 text-accent mb-4">
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                    </div>
+                    <p class="text-sm italic text-stone-100 mb-6 leading-relaxed">"A clareza do método me deu a
+                        segurança que eu precisava para seguir sozinha."</p>
+                    <div class="flex items-center gap-3 border-t border-white/10 pt-4">
+                        <div
+                            class="w-8 h-8 rounded-full bg-accent text-primary flex items-center justify-center font-bold text-[10px]">
+                            PR</div>
+                        <div>
+                            <p class="font-bold text-xs">Paula Ricci</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 fade-in hover:bg-white/20 transition-all duration-500 shadow-2xl">
+                    <div class="flex gap-1 text-accent mb-4">
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="material-symbols-outlined text-sm">star</span>
+                    </div>
+                    <p class="text-sm italic text-stone-100 mb-6 leading-relaxed">"Melhor investimento que fiz.
+                        Organização impecável das etapas."</p>
+                    <div class="flex items-center gap-3 border-t border-white/10 pt-4">
+                        <div
+                            class="w-8 h-8 rounded-full bg-accent text-primary flex items-center justify-center font-bold text-[10px]">
+                            LC</div>
+                        <div>
+                            <p class="font-bold text-xs">Lucas Conti</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 fill-stars">
+            <!-- New Testimonials 1-3 -->
+            <div
+                class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 fade-in hover:bg-white/20 transition-all duration-500 shadow-2xl">
+                <div class="flex gap-1 text-accent mb-4">
+                    <span class="material-symbols-outlined text-sm">star</span>
+                    <span class="material-symbols-outlined text-sm">star</span>
+                    <span class="material-symbols-outlined text-sm">star</span>
+                    <span class="material-symbols-outlined text-sm">star</span>
+                    <span class="material-symbols-outlined text-sm">star</span>
+                </div>
+                <p class="text-sm italic text-stone-100 mb-6 leading-relaxed">"O que mais me ajudou no Anna Con Te foi a
+                    clareza. Eu já tinha pesquisado muita coisa na internet, mas tudo era solto e confuso. No curso,
+                    entendi a ordem correta das etapas..."</p>
+                <div class="flex items-center gap-3 border-t border-white/10 pt-4">
+                    <div
+                        class="w-8 h-8 rounded-full bg-accent text-primary flex items-center justify-center font-bold text-[10px]">
+                        RG</div>
+                    <div>
+                        <p class="font-bold text-xs">Ricardo Giordano</p>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 fade-in hover:bg-white/20 transition-all duration-500 shadow-2xl">
+                <div class="flex gap-1 text-accent mb-4">
+                    <span class="material-symbols-outlined text-sm">star</span>
+                    <span class="material-symbols-outlined text-sm">star</span>
+                    <span class="material-symbols-outlined text-sm">star</span>
+                    <span class="material-symbols-outlined text-sm">star</span>
+                    <span class="material-symbols-outlined text-sm">star</span>
+                </div>
+                <p class="text-sm italic text-stone-100 mb-6 leading-relaxed">"Eu não tinha condições de pagar uma
+                    consultoria completa, mas também não queria fazer tudo sozinha no escuro. O curso foi exatamente o
+                    meio do caminho que eu precisava."</p>
+                <div class="flex items-center gap-3 border-t border-white/10 pt-4">
+                    <div
+                        class="w-8 h-8 rounded-full bg-accent text-primary flex items-center justify-center font-bold text-[10px]">
+                        BM</div>
+                    <div>
+                        <p class="font-bold text-xs">Beatriz Moretti</p>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 fade-in hover:bg-white/20 transition-all duration-500 shadow-2xl">
+                <div class="flex gap-1 text-accent mb-4">
+                    <span class="material-symbols-outlined text-sm">star</span>
+                    <span class="material-symbols-outlined text-sm">star</span>
+                    <span class="material-symbols-outlined text-sm">star</span>
+                    <span class="material-symbols-outlined text-sm">star</span>
+                    <span class="material-symbols-outlined text-sm">star</span>
+                </div>
+                <p class="text-sm italic text-stone-100 mb-6 leading-relaxed">"Os PDFs e os checklists do curso fazem
+                    toda a diferença. Parece simples, mas saber exatamente o que pedir e como organizar evita erros que
+                    eu certamente cometeria."</p>
+                <div class="flex items-center gap-3 border-t border-white/10 pt-4">
+                    <div
+                        class="w-8 h-8 rounded-full bg-accent text-primary flex items-center justify-center font-bold text-[10px]">
+                        CF</div>
+                    <div>
+                        <p class="font-bold text-xs">Claudio Fontana</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 max-w-4xl mx-auto fill-stars">
+            <!-- New Testimonials 4-5 -->
+            <div
+                class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 fade-in hover:bg-white/20 transition-all duration-500 shadow-2xl">
+                <div class="flex gap-1 text-accent mb-4">
+                    <span class="material-symbols-outlined text-sm">star</span>
+                    <span class="material-symbols-outlined text-sm">star</span>
+                    <span class="material-symbols-outlined text-sm">star</span>
+                    <span class="material-symbols-outlined text-sm">star</span>
+                    <span class="material-symbols-outlined text-sm">star</span>
+                </div>
+                <p class="text-sm italic text-stone-100 mb-6 leading-relaxed">"Antes do curso, eu tinha muito medo de
+                    errar e travar o processo. Entender as etapas de análise, retificação e tradução me deu confiança
+                    para seguir. É orientação prática!"</p>
+                <div class="flex items-center gap-3 border-t border-white/10 pt-4">
+                    <div
+                        class="w-8 h-8 rounded-full bg-accent text-primary flex items-center justify-center font-bold text-[10px]">
+                        GR</div>
+                    <div>
+                        <p class="font-bold text-xs">Giuliana Romano</p>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 fade-in hover:bg-white/20 transition-all duration-500 shadow-2xl">
+                <div class="flex gap-1 text-accent mb-4">
+                    <span class="material-symbols-outlined text-sm">star</span>
+                    <span class="material-symbols-outlined text-sm">star</span>
+                    <span class="material-symbols-outlined text-sm">star</span>
+                    <span class="material-symbols-outlined text-sm">star</span>
+                    <span class="material-symbols-outlined text-sm">star</span>
+                </div>
+                <p class="text-sm italic text-stone-100 mb-6 leading-relaxed">"O diferencial do Anna Con Te é o
+                    acompanhamento. Mesmo sendo um modelo acessível, você sente que não está sozinho. A forma como a
+                    Anna explica traz muita tranquilidade."</p>
+                <div class="flex items-center gap-3 border-t border-white/10 pt-4">
+                    <div
+                        class="w-8 h-8 rounded-full bg-accent text-primary flex items-center justify-center font-bold text-[10px]">
+                        EL</div>
+                    <div>
+                        <p class="font-bold text-xs">Enzo Lombardi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-16 fade-in">
+            <a href="#investimento"
+                class="btn bg-accent text-primary px-10 py-5 rounded-full text-sm font-bold uppercase tracking-widest hover:scale-105 transition shadow-2xl inline-block">Quero
+                ver todos os resultados</a>
+        </div>
+        </div>
+    </section>
+
+    <!-- O Que Muda na Sua Vida -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold font-display italic">O que muda na sua vida ao reconhecer sua cidadania
+                    italiana?</h2>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-4 fade-in">
+                    <div
+                        class="flex items-start gap-4 bg-stone-50 p-6 rounded-2xl border border-stone-100 shadow-sm hover:translate-x-2 transition-transform">
+                        <div
+                            class="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-primary flex-shrink-0 shadow-sm">
+                            <span class="material-symbols-outlined text-lg">check_circle</span>
+                        </div>
+                        <p class="font-medium text-slate-700">Direito de residir legalmente em países da União Europeia,
+                            conforme as normas vigentes.</p>
+                    </div>
+                    <div
+                        class="flex items-start gap-4 bg-stone-50 p-6 rounded-2xl border border-stone-100 shadow-sm hover:translate-x-2 transition-transform">
+                        <div
+                            class="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-primary flex-shrink-0 shadow-sm">
+                            <span class="material-symbols-outlined text-lg">check_circle</span>
+                        </div>
+                        <p class="font-medium text-slate-700">Possibilidade de trabalhar e estudar sem necessidade de
+                            visto, respeitando a legislação local.</p>
+                    </div>
+                    <div
+                        class="flex items-start gap-4 bg-stone-50 p-6 rounded-2xl border border-stone-100 shadow-sm hover:translate-x-2 transition-transform">
+                        <div
+                            class="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-primary flex-shrink-0 shadow-sm">
+                            <span class="material-symbols-outlined text-lg">check_circle</span>
+                        </div>
+                        <p class="font-medium text-slate-700">Concorrer a oportunidades profissionais como cidadão
+                            italiano, e não como estrangeiro.</p>
+                    </div>
+                    <div
+                        class="flex items-start gap-4 bg-stone-50 p-6 rounded-2xl border border-stone-100 shadow-sm hover:translate-x-2 transition-transform">
+                        <div
+                            class="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-primary flex-shrink-0 shadow-sm">
+                            <span class="material-symbols-outlined text-lg">check_circle</span>
+                        </div>
+                        <p class="font-medium text-slate-700">Ampliação das possibilidades de carreira e mobilidade
+                            internacional.</p>
+                    </div>
+                    <div
+                        class="flex items-start gap-4 bg-stone-50 p-6 rounded-2xl border border-stone-100 shadow-sm hover:translate-x-2 transition-transform">
+                        <div
+                            class="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-primary flex-shrink-0 shadow-sm">
+                            <span class="material-symbols-outlined text-lg">check_circle</span>
+                        </div>
+                        <p class="font-medium text-slate-700">Acesso facilitado a universidades e mercados de trabalho
+                            europeus.</p>
+                    </div>
+                </div>
+                <div class="bg-primary p-12 rounded-[3.5rem] text-white relative overflow-hidden fade-in shadow-2xl">
+                    <div class="absolute inset-0 marble-texture opacity-10"></div>
+                    <div class="relative z-10 text-center">
+                        <p class="text-3xl font-display italic mb-8">Essa é uma oportunidade de reconexão e propósito!
+                        </p>
+                        <p class="text-stone-300 mb-8 leading-relaxed italic">"Assim como eu e muitos alunos deram
+                            início ao seu processo com clareza e método, você também pode começar sua jornada agora."
+                        </p>
+                        <a href="#investimento"
+                            class="bg-accent text-primary px-10 py-5 rounded-2xl font-bold uppercase tracking-widest text-sm hover:scale-105 transition block text-center shadow-xl">Quero
+                            começar meu processo agora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como funciona o Anna Con Te? -->
+    <section class="py-24 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold font-display italic mb-16 text-primary">Como funciona o Anna Con Te?</h2>
+            <div class="space-y-12 max-w-4xl mx-auto mb-16 text-lg text-slate-600 leading-relaxed text-left">
+                <p>O Anna Con Te é uma consultoria compartilhada, criada para quem quer reconhecer a cidadania italiana
+                    com método, clareza e segurança — sem depender de uma consultoria tradicional do início ao fim.</p>
+                <p>Você aprende, executa e avança etapa por etapa, seguindo exatamente o caminho real do processo de
+                    cidadania, com orientação técnica da Anna em cada fase. <strong>Aqui não existe informação solta ou
+                        passos fora de ordem.</strong></p>
+                <p>Você entra, aprende, executa e só avança para a próxima fase quando a anterior está segura e bem
+                    feita.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-stone-100 text-left fade-in">
+                    <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-primary mb-6">
+                        <span class="material-symbols-outlined text-xl">layers</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">1. Módulos que acompanham o processo real</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">Organizado exatamente como o processo acontece na
+                        prática. Você avança sem pular fases ou se perder no caminho.</p>
+                </div>
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-stone-100 text-left fade-in">
+                    <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-primary mb-6">
+                        <span class="material-symbols-outlined text-xl">person_search</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">2. Acompanhamento direto com a Anna</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">A Anna acompanha o processo, orienta decisões
+                        importantes e direciona cada etapa com base na realidade do seu caso.</p>
+                </div>
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-stone-100 text-left fade-in">
+                    <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-primary mb-6">
+                        <span class="material-symbols-outlined text-xl">groups</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">3. Grupos organizados por fase</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">Suporte adequado ao seu momento, sem misturar
+                        dúvidas de quem está começando com etapas mais avançadas.</p>
+                </div>
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-stone-100 text-left fade-in">
+                    <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-primary mb-6">
+                        <span class="material-symbols-outlined text-xl">picture_as_pdf</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">4. PDFs e materiais exclusivos</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">Materiais práticos com checklists e orientações
+                        claras que reduzem erros e evitam retrabalho.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Anna with Carousel -->
+    <section class="relative bg-white overflow-hidden py-24" id="quem-e-anna">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="lg:w-1/2 w-full fade-in">
+                    <div class="carousel-container shadow-2xl">
+                        <div class="carousel-track" id="carousel-track">
+                            <div class="carousel-slide"><img src="assets/anna-passaporte.jpg"
+                                    class="w-full h-[600px] object-cover"></div>
+                            <div class="carousel-slide"><img src="assets/anna-florenca.jpg"
+                                    class="w-full h-[600px] object-cover"></div>
+                            <div class="carousel-slide"><img src="assets/anna-coliseu.png"
+                                    class="w-full h-[600px] object-cover"></div>
+                            <div class="carousel-slide"><img src="assets/anna-cinqueterre.png"
+                                    class="w-full h-[600px] object-cover"></div>
+                            <div class="carousel-slide"><img src="assets/anna-trevi.png"
+                                    class="w-full h-[600px] object-cover"></div>
+                            <div class="carousel-slide"><img src="assets/anna-profissional.jpg"
+                                    class="w-full h-[600px] object-cover"></div>
+                            <div class="carousel-slide"><img src="assets/anna-janela.jpg"
+                                    class="w-full h-[600px] object-cover"></div>
+                        </div>
+                        <button
+                            class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full text-primary"
+                            onclick="prevSlide()"><span class="material-symbols-outlined">chevron_left</span></button>
+                        <button
+                            class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full text-primary"
+                            onclick="nextSlide()"><span class="material-symbols-outlined">chevron_right</span></button>
+                        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2" id="carousel-dots"></div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 max-w-xl fade-in">
+                    <span
+                        class="text-primary font-bold uppercase text-xs tracking-[0.4em] mb-6 block border-b border-primary/20 pb-2 w-fit italic">Quem
+                        é Anna?</span>
+                    <h2 class="text-5xl font-bold mb-10 leading-tight font-display italic">Anna Favaretto</h2>
+                    <div class="space-y-6 text-slate-600 leading-relaxed text-lg">
+                        <p>Anna Favaretto é especialista em cidadania italiana e já ajudou centenas de famílias a
+                            reconectar suas histórias com a Itália.</p>
+                        <p>Antes de se tornar consultora, ela mesma percorreu todo o caminho do reconhecimento da
+                            cidadania sozinha, sem recursos para pagar uma consultoria completa. Foi vivendo o processo
+                            na prática que entendeu cada dúvida, cada erro comum e cada etapa que realmente faz
+                            diferença.</p>
+                        <p>Com anos de experiência e uma abordagem humana e acessível, Anna criou o Anna con Te para
+                            orientar quem deseja reconhecer sua cidadania com segurança, método e clareza, sem gastar
+                            uma fortuna e sem caminhar sozinho(a).</p>
+                        <div
+                            class="relative py-8 pl-8 mt-8 border-l-4 border-accent bg-stone-50 p-6 rounded-r-2xl shadow-sm">
+                            <p class="italic text-xl font-display text-slate-800 italic">"Anna Con Te significa 'Anna
+                                com você'. E é exatamente isso que ela faz: te guia em cada fase do seu processo."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Section -->
+    <section class="py-24 bg-primary text-white relative overflow-hidden" id="investimento">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 font-display italic">Módulos & Investimento</h2>
+                <p class="text-stone-300 text-lg leading-relaxed">O Anna con Te foi criado para tornar o reconhecimento
+                    da cidadania italiana acessível e seguro, especialmente para quem não pode investir dezenas de
+                    milhares de reais em uma consultoria completa. Aqui, você paga apenas pelo que realmente faz sentido
+                    para o seu momento.</p>
+            </div>
+            <div class="max-w-xl mx-auto fade-in mb-16">
+                <div class="bg-white rounded-[3rem] overflow-hidden shadow-2xl relative">
+                    <div class="bg-accent text-primary text-center py-2 text-xs font-bold uppercase tracking-widest">
+                        Oferta Exclusiva</div>
+                    <div class="p-12 text-slate-800">
+                        <div class="flex justify-center mb-10">
+                            <img src="assets/logo-oferta.png" alt="Anna Con Te" class="h-48 rounded-2xl shadow-lg">
+                        </div>
+                        <ul class="space-y-4 mb-10">
+                            <li class="flex items-start gap-3 text-sm font-medium leading-tight relative"><span
+                                    class="material-symbols-outlined text-accent text-lg flex-shrink-0">check_circle</span>
+                                <span>Orientação técnica com método e critério</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm font-medium leading-tight relative"><span
+                                    class="material-symbols-outlined text-accent text-lg flex-shrink-0">check_circle</span>
+                                <span>Você aprende e executa junto com segurança</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm font-medium leading-tight relative"><span
+                                    class="material-symbols-outlined text-accent text-lg flex-shrink-0">check_circle</span>
+                                <span>Acompanhamento individual organizado</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm font-medium leading-tight relative"><span
+                                    class="material-symbols-outlined text-accent text-lg flex-shrink-0">check_circle</span>
+                                <span>Invista no que faz sentido para o seu momento</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm font-medium leading-tight relative"><span
+                                    class="material-symbols-outlined text-accent text-lg flex-shrink-0">check_circle</span>
+                                <span>Modelo pensado para quem não quer caminhar só</span>
+                            </li>
+                        </ul>
+                        <div class="bg-cream p-10 rounded-[2.5rem] text-center mb-10 border border-primary/5">
+                            <p class="text-sm text-slate-500 mb-2 font-bold uppercase tracking-widest">12x de</p>
+                            <div class="flex items-center justify-center gap-1">
+                                <span class="text-2xl font-bold">R$</span>
+                                <span class="text-7xl font-bold text-primary italic font-display">70,02</span>
+                            </div>
+                            <p class="text-xs mt-4 text-slate-400 font-medium font-sans">ou R$ 697 à vista</p>
+                        </div>
+                        <a href="https://pay.hotmart.com/V97148810K?off=pt7y71r5"
+                            class="w-full bg-primary text-white py-6 rounded-2xl font-bold text-lg hover:bg-neutral-800 transition mb-4 shadow-xl flex items-center justify-center uppercase tracking-widest">Quero
+                            começar meu processo agora</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modules Cards (Exactly like the print) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                <!-- Card 1 (Verde) -->
+                <div
+                    class="bg-primary/40 border border-white/10 rounded-2xl overflow-hidden flex flex-col text-center shadow-xl fade-in group">
+                    <div class="h-40 relative overflow-hidden bg-green-600">
+                        <img src="assets/modulo-verde.png" alt="Módulo 1"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-green-600/10"></div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-sm font-bold mb-4 leading-tight">Construção da Árvore Genealógica</h4>
+                            <p class="text-xs text-stone-400 mb-1 tracking-widest uppercase">12x de</p>
+                            <p class="text-xl font-bold text-accent mb-6 italic">R$ 25,55</p>
+                        </div>
+                        <a href="https://pay.hotmart.com/V97148810K?off=qghd4kca"
+                            class="border border-white/40 text-[10px] font-bold uppercase tracking-widest py-3 rounded-lg hover:bg-white hover:text-primary transition">Garantir
+                            Agora</a>
+                    </div>
+                </div>
+                <!-- Card 2 (Marrom) -->
+                <div
+                    class="bg-primary/40 border border-white/10 rounded-2xl overflow-hidden flex flex-col text-center shadow-xl fade-in group">
+                    <div class="h-40 relative overflow-hidden bg-amber-900">
+                        <img src="assets/modulo-marrom.png" alt="Módulo 2"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-amber-900/10"></div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-sm font-bold mb-4 leading-tight">Emissão das Certidões</h4>
+                            <p class="text-xs text-stone-400 mb-1 tracking-widest uppercase">12x de</p>
+                            <p class="text-xl font-bold text-accent mb-6 italic">R$ 25,55</p>
+                        </div>
+                        <a href="https://pay.hotmart.com/V97148810K?off=qghd4kca"
+                            class="border border-white/40 text-[10px] font-bold uppercase tracking-widest py-3 rounded-lg hover:bg-white hover:text-primary transition">Garantir
+                            Agora</a>
+                    </div>
+                </div>
+                <!-- Card 3 (Azul) -->
+                <div
+                    class="bg-primary/40 border border-white/10 rounded-2xl overflow-hidden flex flex-col text-center shadow-xl fade-in group">
+                    <div class="h-40 relative overflow-hidden bg-blue-900">
+                        <img src="assets/modulo-azul.png" alt="Módulo 3"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-blue-900/10"></div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-sm font-bold mb-4 leading-tight">Análise das Certidões</h4>
+                            <p class="text-xs text-stone-400 mb-1 tracking-widest uppercase">12x de</p>
+                            <p class="text-xl font-bold text-accent mb-6 italic">R$ 59,99</p>
+                        </div>
+                        <a href="https://pay.hotmart.com/V97148810K?off=qghd4kca"
+                            class="border border-white/40 text-[10px] font-bold uppercase tracking-widest py-3 rounded-lg hover:bg-white hover:text-primary transition">Garantir
+                            Agora</a>
+                    </div>
+                </div>
+                <!-- Card 4 (Amarelo) -->
+                <div
+                    class="bg-primary/40 border border-white/10 rounded-2xl overflow-hidden flex flex-col text-center shadow-xl fade-in group">
+                    <div class="h-40 relative overflow-hidden bg-yellow-500">
+                        <img src="assets/modulo-amarelo.png" alt="Módulo 4"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-yellow-500/10"></div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-sm font-bold mb-4 leading-tight">Apostilamento e Tradução</h4>
+                            <p class="text-xs text-stone-400 mb-1 tracking-widest uppercase">12x de</p>
+                            <p class="text-xl font-bold text-accent mb-6 italic">R$ 25,55</p>
+                        </div>
+                        <a href="https://pay.hotmart.com/V97148810K?off=qghd4kca"
+                            class="border border-white/40 text-[10px] font-bold uppercase tracking-widest py-3 rounded-lg hover:bg-white hover:text-primary transition">Garantir
+                            Agora</a>
+                    </div>
+                </div>
+                <!-- Card 5 (Vinho) -->
+                <div
+                    class="bg-primary/40 border border-white/10 rounded-2xl overflow-hidden flex flex-col text-center shadow-xl fade-in group">
+                    <div class="h-40 relative overflow-hidden bg-red-900">
+                        <img src="assets/modulo-vinho.png" alt="Módulo 5"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-red-900/10"></div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-sm font-bold mb-4 leading-tight">Pesquisas Genealógicas</h4>
+                            <p class="text-xs text-stone-400 mb-1 tracking-widest uppercase">12x de</p>
+                            <p class="text-xl font-bold text-accent mb-6 italic">R$ 25,55</p>
+                        </div>
+                        <a href="https://pay.hotmart.com/V97148810K?off=qghd4kca"
+                            class="border border-white/40 text-[10px] font-bold uppercase tracking-widest py-3 rounded-lg hover:bg-white hover:text-primary transition">Garantir
+                            Agora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee (Small section at bottom of print) -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div
+                class="bg-stone-50 border border-stone-100 rounded-3xl p-8 flex flex-col md:flex-row items-center gap-8 fade-in">
+                <div
+                    class="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center text-primary flex-shrink-0">
+                    <span class="material-symbols-outlined text-3xl">verified</span>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Sua satisfação ou seu dinheiro de volta</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed italic">Experimente o Anna Con Te por 7 dias. Se
+                        nesse período você entender que o método não é para você ou que a orientação técnica não faz
+                        sentido para o seu caso, basta solicitar o reembolso. Devolvemos 100% do seu investimento, sem
+                        burocracia e sem letras miúdas. O meu compromisso é com a sua clareza e com a verdade do seu
+                        processo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Phrase -->
+    <section class="py-24 bg-stone-50 text-center border-t border-stone-100 italic">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-display font-bold mb-10 text-primary">
+                A sua história merece ser honrada. Comece hoje o caminho para o seu reconhecimento.</h2>
+            <a href="#investimento"
+                class="bg-primary text-white px-10 py-5 rounded-xl font-bold uppercase tracking-widest text-sm hover:bg-neutral-800 transition shadow-xl inline-block">Quero
+                começar meu reconhecimento agora</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary pt-20 pb-10 text-white/80">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 font-sans">
+                <div class="md:col-span-2">
+                    <img src="assets/LOGO FUNDO TRANSPARENTE.png" alt="Anna Con Te"
+                        class="h-20 mb-8 brightness-0 invert">
+                    <p class="max-w-sm leading-relaxed italic opacity-80">Capacitando brasileiros a reconquistarem suas
+                        raízes italianas com independência e segurança técnica.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-xs tracking-widest">Links</h4>
+                    <ul class="space-y-4 text-sm opacity-70 italic">
+                        <li><a class="hover:text-white transition" href="#">Início</a></li>
+                        <li><a class="hover:text-white transition" href="#metodo">O Método</a></li>
+                        <li><a class="hover:text-white transition" href="#investimento">Inscrição</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-xs tracking-widest font-black">Social</h4>
+                    <div class="flex gap-4">
+                        <a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-primary transition"
+                            href="#"><span class="material-symbols-outlined text-xl">camera_alt</span></a>
+                        <a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-primary transition"
+                            href="#"><span class="material-symbols-outlined text-xl">play_circle</span></a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] tracking-widest uppercase opacity-40">
+                <p>© 2024 Anna Con Te. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const track = document.getElementById('carousel-track');
+        const totalSlides = track.children.length;
+        const dotsContainer = document.getElementById('carousel-dots');
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('button');
+            dot.className = `dot w-2 h-2 rounded-full bg-stone-300 transition-all ${i === 0 ? 'active' : ''}`;
+            dot.onclick = () => goToSlide(i);
+            dotsContainer.appendChild(dot);
+        }
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            Array.from(dotsContainer.children).forEach((dot, i) => dot.classList.toggle('active', i === currentSlide));
+        }
+        function nextSlide() { currentSlide = (currentSlide + 1) % totalSlides; updateCarousel(); }
+        function prevSlide() { currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; updateCarousel(); }
+        function goToSlide(index) { currentSlide = index; updateCarousel(); }
+        setInterval(nextSlide, 5000);
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

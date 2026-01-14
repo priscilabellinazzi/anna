@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+/* Variáveis de cor */
+:root {
+  --background: #fdfbf7;
+  --foreground: #1e293b; 
+  --primary: #662a2a;
+  --accent: #c5a044;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-display: var(--font-playfair);
+  --font-sans: var(--font-inter);
+}
+
+/* Estilos base */
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Animações */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
